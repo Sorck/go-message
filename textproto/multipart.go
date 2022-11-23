@@ -259,7 +259,7 @@ func (r *MultipartReader) NextPart() (*Part, error) {
 			return nil, io.EOF
 		}
 		if err != nil {
-			return nil, fmt.Errorf("multipart: NextPart: %v", err)
+			return nil, fmt.Errorf("multipart: NextPart: %w", err)
 		}
 
 		if r.isBoundaryDelimiterLine(line) {
